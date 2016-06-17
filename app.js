@@ -90,13 +90,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 
-// // function multiplyArray(testArray) {
-//
-// };
+function multiplyArray(testArray) {
+  var total = multiply(multiply(testArray[0], testArray[1])[0], testArray[2])[0];
+  var message = 'The numbers ' + testArray + ' have a product of ' + total + '.';
+  return [total, message]
+};
 
 // Here is the test for multiplyArray(); uncomment it to run it
 
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle, synchronize the code between both GitHubs and both laptops, and swap Driver/Navigator roles. Submit the link to the repo via Canvas.
 
