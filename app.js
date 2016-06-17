@@ -48,11 +48,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a,b,c){
-
+  var firstSum = sum(a,b)[0];
+  console.log(firstSum);
+  var finalSum = sum(firstSum,c)[0];
+  console.log(finalSum);
+  var firstProduct = multiply(a,b)[0];
+  var finalProduct = multiply(firstProduct,c)[0];
+  var message1 = a + ' and ' + b + ' and ' + c + ' sum to ' + finalSum + '.';
+  var message2 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + finalProduct + '.';
+  return [finalSum, finalProduct, message1, message2];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle, synchronize the code between both GitHubs and both laptops, and swap Driver/Navigator roles. don't forget to create a new branch for your work on the next question!
 
@@ -122,7 +130,7 @@ function testMultiply() {
 }
 
 function testSumAndMultiply() {
-  if (sumAndMultiply(4, 7, 5)[1] === '4 and 7 and 5 sum to 16.' && sumAndMultiply(4, 7, 5)[2] === 'The product of 4 and 7 and 5 is 140.') {
+  if (sumAndMultiply(4, 7, 5)[2] === '4 and 7 and 5 sum to 16.' && sumAndMultiply(4, 7, 5)[3] === 'The product of 4 and 7 and 5 is 140.') {
     console.log('%c TEST FOR sumAndMultiply() PASSES', 'color: green');
   } else {
     console.log('%c TEST FOR sumAndMultiply() FAILS', 'color: red');
