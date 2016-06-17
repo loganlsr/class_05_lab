@@ -48,12 +48,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a,b,c){
-  var firstSum = sum(a,b)[0];
-  console.log(firstSum);
-  var finalSum = sum(firstSum,c)[0];
-  console.log(finalSum);
-  var firstProduct = multiply(a,b)[0];
-  var finalProduct = multiply(firstProduct,c)[0];
+  var finalSum = sum(sum(a,b)[0],c)[0];
+  var finalProduct = multiply(multiply(a,b)[0],c)[0];
   var message1 = a + ' and ' + b + ' and ' + c + ' sum to ' + finalSum + '.';
   var message2 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + finalProduct + '.';
   return [finalSum, finalProduct, message1, message2];
@@ -74,12 +70,14 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 testArray = [2,3,4];
 function sumArray(testArray){
-
+  var total = sum(sum(testArray[0], testArray[1])[0], testArray[2])[0];
+  var message = testArray + ' was passed in as an array of numbers, and ' + total + ' is their sum.';
+  return [total, message];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle, synchronize the code between both GitHubs and both laptops, and swap Driver/Navigator roles. Don't forget to create a new branch for your work on the next question!
 
